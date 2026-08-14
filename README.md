@@ -6,9 +6,10 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 
 ## Current Focus
 
-- Building cloud-native data pipelines on AWS
-- Orchestrating idempotent workflows with Apache Airflow
-- Developing RAG applications with Amazon Bedrock and LangChain
+- Building and operating ASK Seoul's Weather/Traffic lakehouse pipelines with Airflow, R2, Iceberg, dbt, and D1
+- Designing idempotent recovery paths for large scheduled loads with PyIceberg transactions and incremental MERGE
+- Strengthening data contracts, freshness checks, and observability for reliable day-to-day operation
+- Extending curated public-data products to external AI agents through open-source skill and API integrations
 
 ## Core Stack
 
