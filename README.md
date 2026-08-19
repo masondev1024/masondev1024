@@ -29,8 +29,15 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 
 <p>
   <img height="165" src="https://github-stats-extended.vercel.app/api?username=masondev1024&show_icons=true&theme=transparent&hide_rank=true&include_all_commits=true&disable_animations=true&locale=en" alt="GitHub Stats" />
-  <img height="165" src="https://streak-stats.demolab.com?user=masondev1024&theme=transparent&hide_border=true&locale=en&disable_animations=true" alt="GitHub Streak" />
 </p>
+
+<p>
+  <a href="https://github.com/masondev1024">
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=masondev1024&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="GitHub contribution activity graph for masondev1024" />
+  </a>
+</p>
+
+[Open the native GitHub activity graph →](https://github.com/masondev1024)
 
 ## Contact
 
