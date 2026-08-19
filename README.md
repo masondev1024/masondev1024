@@ -33,7 +33,7 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 
 <p>
   <a href="https://github.com/masondev1024">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=masondev1024&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Activity" alt="GitHub contribution activity graph for masondev1024" />
+    <img height="165" src="./assets/github-streak.svg" alt="GitHub contribution streak for masondev1024" />
   </a>
 </p>
 
