@@ -35,13 +35,13 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 ## GitHub Activity
 
 <p align="center">
-  <a href="https://github.com/masondev1024">
-    <img height="165" src="./assets/github-streak.svg" alt="GitHub contribution streak for masondev1024" />
-  </a>
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=masondev1024&show_icons=true&theme=transparent&hide_rank=true&include_all_commits=true&disable_animations=true&locale=en" alt="GitHub Stats" />
 </p>
 
 <p align="center">
-  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=masondev1024&theme=github" alt="GitHub profile activity summary for masondev1024" />
+  <a href="https://github.com/masondev1024">
+    <img height="165" src="./assets/github-streak.svg" alt="GitHub contribution streak for masondev1024" />
+  </a>
 </p>
 
 ## Contact
