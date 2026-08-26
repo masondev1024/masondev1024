@@ -30,9 +30,7 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
 ![RAG](https://img.shields.io/badge/RAG-4B32C3?style=flat-square&logoColor=white)
 ![MicroStrategy](https://img.shields.io/badge/MicroStrategy-EC1C24?style=flat-square&logoColor=white)
-![Oracle Database](https://img.shields.io/badge/Oracle%20Database-F80000?style=flat-square&logo=oracle&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![ODBC](https://img.shields.io/badge/ODBC-336791?style=flat-square&logoColor=white)
 
 ## GitHub Activity
 
