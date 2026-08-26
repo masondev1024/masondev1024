@@ -21,6 +21,7 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 ![Apache Iceberg](https://img.shields.io/badge/Apache%20Iceberg-261D2F?style=flat-square&logo=apache&logoColor=white)
 ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Amazon Kinesis](https://img.shields.io/badge/Amazon%20Kinesis-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
 ![Cloudflare R2](https://img.shields.io/badge/Cloudflare%20R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
@@ -32,7 +33,6 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 ![Oracle Database](https://img.shields.io/badge/Oracle%20Database-F80000?style=flat-square&logo=oracle&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![ODBC](https://img.shields.io/badge/ODBC-336791?style=flat-square&logoColor=white)
-![Data Warehouse](https://img.shields.io/badge/Data%20Warehouse-4B5563?style=flat-square&logoColor=white)
 
 ## GitHub Activity
 
