@@ -1,15 +1,23 @@
 ## Hi, I'm Mason
 
-Data Engineer building reliable AWS data platforms, Airflow workflows, and RAG systems.
+DevOps engineer with data-platform roots, building safe delivery systems and reliable event-data workloads.
 
-I care about pipelines that are observable, recoverable, and simple enough to operate.
+Former BI Platform Engineer with 2 years and 5 months of enterprise platform operations experience. I approach reliability as a product concern: a release is not successful merely because an API returns `200`; it must also preserve the correctness, freshness, and recoverability of the data behind it.
 
-## Current Focus
+## What I Build
 
-- Building and operating ASK Seoul's weather/traffic lakehouse with Airflow, R2, Iceberg, dbt, Trino, and D1/Workers
-- Designing idempotent recovery paths for large scheduled loads with PyIceberg transactions and incremental MERGE
-- Strengthening data contracts, freshness checks, and observability for reliable day-to-day operation
-- Extending curated public-data products to external AI agents through open-source skill and API integrations
+- **Release reliability** — GitHub Actions OIDC, Terraform, EKS, Argo CD, Argo Rollouts, canary analysis, Prometheus/Grafana, k6, failure drills, and runbooks.
+- **Event and data integrity** — Kafka/Kinesis ingestion, versioned contracts, DLQ isolation, idempotent consumers, lineage, Parquet/S3, and queryable validation.
+- **Cost-aware operations** — short-lived AWS validation environments, explicit approval gates, teardown audits, and evidence that distinguishes local tests from cloud E2E results.
+
+## Featured Work
+
+| Project | Reliability problem addressed | Evidence |
+| --- | --- | --- |
+| [AWS Data Platform GitOps](https://github.com/masondev1024/aws-data-platform-gitops) | Safe GitOps delivery for a high-contention application | Immutable SHA images, GitHub Actions OIDC, Argo CD/Rollouts canary analysis, k6, RDS failover, rollback and capacity runbooks |
+| [Kafka Streaming Data Platform](https://github.com/masondev1024/KafKa) | Event loss, duplicates, and invalid payloads in a streaming pipeline | Versioned contract, DLQ, explicit offset commit, `event_id` idempotency, Prometheus, Firehose to S3/Athena validation |
+| [Robot Data Platform](https://github.com/masondev1024/robot-data-pipeline) | Operable AWS streaming and lakehouse workloads without permanent infrastructure spend | Kinesis/Firehose/S3, EKS, Terraform, SLO guardrails, short-lived E2E evidence, teardown audits |
+| [ASK Seoul Agent](https://github.com/masondev1024/ask-seoul-agent) | Fail-closed AI/data service behavior when evidence is missing | Versioned API contract, allowlisted tools, deterministic evaluation gate, structured observability |
 
 ## Core Stack
 
@@ -27,8 +35,8 @@ I care about pipelines that are observable, recoverable, and simple enough to op
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![RAG](https://img.shields.io/badge/RAG-4B32C3?style=flat-square&logoColor=white)
+![Argo](https://img.shields.io/badge/Argo-EE5A24?style=flat-square&logo=argo&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
 ![MicroStrategy](https://img.shields.io/badge/MicroStrategy-EC1C24?style=flat-square&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
