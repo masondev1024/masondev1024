@@ -1,57 +1,45 @@
-## Hi, I'm Mason
+# 정성헌 · 데이터 엔지니어
 
-DevOps engineer with data-platform roots, building safe delivery systems and reliable event-data workloads.
+BI 시스템을 2년 5개월 운영했습니다. 이후 공공데이터와 이벤트 데이터를 대상으로 수집·변환·게시 흐름을 개발하고, 누락·중복과 장애가 생겼을 때 복구하는 과정을 검증했습니다.
 
-Former BI Platform Engineer with 2 years and 5 months of enterprise platform operations experience. I approach reliability as a product concern: a release is not successful merely because an API returns `200`; it must also preserve the correctness, freshness, and recoverability of the data behind it.
+[포트폴리오](https://jungseongheon.org/portfolio/) · [기술 블로그](https://velog.io/@mason_dev/posts) · [이메일](mailto:masondev1024@gmail.com)
 
-## What I Build
+## 주요 프로젝트
 
-- **Release reliability** — GitHub Actions OIDC, Terraform, EKS, Argo CD, Argo Rollouts, canary analysis, Prometheus/Grafana, k6, failure drills, and runbooks.
-- **Event and data integrity** — Kafka/Kinesis ingestion, versioned contracts, DLQ isolation, idempotent consumers, lineage, Parquet/S3, and queryable validation.
-- **Cost-aware operations** — short-lived AWS validation environments, explicit approval gates, teardown audits, and evidence that distinguishes local tests from cloud E2E results.
+### 1. ASK Seoul · 공공데이터 수집과 품질 검증
 
-## Featured Work
+팀 프로젝트에서 기상·교통 수집, Iceberg 적재, dbt 변환과 게시 전 검증을 맡았습니다. 대량 입력의 SQL 크기 제한, 게시 요청 충돌, 수집 누락을 다루고 재실행 조건을 정리했습니다. 이후 개인 Seoul Weather Platform에서 실행 슬롯 분리와 예보 품질 분석을 이어갔습니다.
 
-| Project | Reliability problem addressed | Evidence |
-| --- | --- | --- |
-| [AWS Data Platform GitOps](https://github.com/masondev1024/aws-data-platform-gitops) | Safe GitOps delivery for a high-contention application | Immutable SHA images, GitHub Actions OIDC, Argo CD/Rollouts canary analysis, k6, RDS failover, rollback and capacity runbooks |
-| [Kafka Streaming Data Platform](https://github.com/masondev1024/KafKa) | Event loss, duplicates, and invalid payloads in a streaming pipeline | Versioned contract, DLQ, explicit offset commit, `event_id` idempotency, Prometheus, Firehose to S3/Athena validation |
-| [Robot Data Platform](https://github.com/masondev1024/robot-data-pipeline) | Operable AWS streaming and lakehouse workloads without permanent infrastructure spend | Kinesis/Firehose/S3, EKS, Terraform, SLO guardrails, short-lived E2E evidence, teardown audits |
-| [ASK Seoul Agent](https://github.com/masondev1024/ask-seoul-agent) | Fail-closed AI/data service behavior when evidence is missing | Versioned API contract, allowlisted tools, deterministic evaluation gate, structured observability |
+- Python · SQL · Airflow · Iceberg · dbt · Trino · Cloudflare R2
+- [개인 후속 개발](https://github.com/masondev1024/seoul-weather-platform)
+- [조직 기여: 게시 충돌·재시도](https://github.com/ASAC-DE-bigkk/ASAC-DAG/pull/786)
+- [조직 기여: 수집 원본·재실행 검사](https://github.com/ASAC-DE-bigkk/ASAC-DAG/pull/787)
 
-## Core Stack
+### 2. D2C · 승인 기록과 이벤트의 일관성
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logoColor=white)
-![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
-![Trino](https://img.shields.io/badge/Trino-DD00A1?style=flat-square&logo=trino&logoColor=white)
-![Apache Iceberg](https://img.shields.io/badge/Apache%20Iceberg-261D2F?style=flat-square&logo=apache&logoColor=white)
-![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
-![Amazon Kinesis](https://img.shields.io/badge/Amazon%20Kinesis-FF9900?style=flat-square&logo=amazonwebservices&logoColor=white)
-![Cloudflare R2](https://img.shields.io/badge/Cloudflare%20R2-F38020?style=flat-square&logo=cloudflare&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Argo](https://img.shields.io/badge/Argo-EE5A24?style=flat-square&logo=argo&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
-![MicroStrategy](https://img.shields.io/badge/MicroStrategy-EC1C24?style=flat-square&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+승인과 Outbox를 PostgreSQL의 같은 트랜잭션에 저장하고, Kafka로 재전송된 이벤트를 소비자가 event_id로 중복 제거하도록 구현했습니다. 로컬 Docker에서 DB·Kafka·발행기를 중단한 뒤 복구를 확인했으며, 최종 승인·Outbox·고유 적재 각 9건을 대조했습니다.
 
-## GitHub Activity
+- Python · PostgreSQL · Kafka · DuckDB · Docker · Prometheus
+- [코드](https://github.com/masondev1024/d2c-event-data-platform) · [장애·복구 기록](https://github.com/masondev1024/d2c-event-data-platform/blob/main/RUNBOOK.md)
+- 단일 브로커 로컬 검증입니다. D2C의 실제 클러스터 자동 롤백과 대규모 처리 성능은 별도 검증 대상입니다.
 
-<p align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=masondev1024&show_icons=true&theme=transparent&hide_rank=true&include_all_commits=true&disable_animations=true&locale=en" alt="GitHub Stats" />
-</p>
+### 3. 로봇 데이터 플랫폼 · AWS 스트리밍과 배치 이관
 
-<p align="center">
-  <a href="https://github.com/masondev1024">
-    <img height="165" src="./assets/github-streak.svg" alt="GitHub contribution streak for masondev1024" />
-  </a>
-</p>
+Kinesis·Firehose·S3 Parquet·Glue·Athena로 수집과 조회를 연결했습니다. 별도 Glue→사설 RDS 이관에서는 정상 4건의 재실행 후 중복 없음과, 잘못된 배치의 부분 반영 차단을 확인했습니다.
 
-## Contact
+- Terraform · EKS · Kinesis · Firehose · Glue Spark · RDS · Athena
+- [코드와 실행 방법](https://github.com/masondev1024/robot-data-pipeline) · [이관 검증](https://github.com/masondev1024/robot-data-pipeline/blob/main/docs/public/S3-GLUE-RDS-LAB.md)
+- AWS 실험 후 전용 인프라를 삭제했으며, 상시 운영 실적으로 표기하지 않습니다.
 
-[Velog](https://velog.io/@mason_dev) · [Email](mailto:masondev1024@gmail.com)
+### 4. 래플 응모 서비스 · 배포와 장애 복구
+
+기존 팀 프로젝트에 배포 분석과 장애 훈련을 추가했습니다. AWS에서 k6 상태 확인 부하를 45분 동안 보내며 RDS Multi-AZ 장애 전환을 실행했습니다. 연속 5회 요청 성공 기준 애플리케이션 복구 시간은 21.1초였습니다.
+
+- Kubernetes · Argo Rollouts · GitHub Actions OIDC · Prometheus · Grafana · k6
+- [코드](https://github.com/masondev1024/aws-data-platform-gitops) · [지속 부하·장애 전환 기록](https://github.com/masondev1024/aws-data-platform-gitops/blob/main/docs/soak-and-failover.md)
+- 45분 상태 확인 부하는 응모 쓰기 처리량이 아닙니다. 별도 30 VU 응모 API의 p95는 510.9ms입니다.
+
+## 함께 진행한 작업
+
+- [ASK Seoul 에이전트](https://github.com/masondev1024/ask-seoul-agent): 공개 API만 사용하고 모델의 조회 범위를 제한한 데이터 조회 도구
+- [청년 생활법률 상담 AI](https://github.com/masondev1024/youth_law_team_project): 법령 수집·검색 계층과 분야별 라우팅을 맡은 팀 프로젝트
