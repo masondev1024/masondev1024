@@ -1,17 +1,17 @@
-## Hi, I'm Mason
+## 안녕하세요, Mason입니다
 
-Data Engineer designing reliable pipelines from public APIs to validated data products.
+BI 운영 경험을 바탕으로, 수집부터 검증·제공까지 연결하는 데이터 엔지니어.
 
-I started in enterprise BI and moved upstream to make data systems replayable, testable, and easy to operate.
+재실행해도 중복이 쌓이지 않고, 잘못된 데이터가 사용자에게 닿기 전에 멈추는 파이프라인 지향.
 
-## Current Focus
+## 지금 집중하는 것
 
-- Designing ASK Seoul's path as Airflow -> R2/Parquet -> Iceberg -> dbt/Trino -> D1/Workers, with one clear responsibility per layer
-- Using Airflow for dependency scheduling, retries, quality gates, and backfills; using dbt/Trino so transformations and checks stay queryable
-- Keeping raw inputs replayable in R2/Parquet; using Iceberg for transactional delete-and-append and incremental MERGE; publishing only verified products through D1/Workers
-- Using failure data to narrow the design: 80k+ row loads caused 20 scheduled failures, while full-history dedup hit Trino's 3.71 GB per-node limit
+- **복구 가능한 수집**: Cloudflare R2에 원본과 수집 이력을 보존해 재처리 기준점 확보. Airflow로 작업 의존성·재시도·과거 구간 재처리 관리.
+- **중복 없는 재실행**: 8만 행 이상 적재 시 SQL 크기 제한에 대응해 Iceberg의 삭제·추가를 단일 트랜잭션으로 구성. 같은 실행 구간을 안전하게 교체.
+- **자원 한계에 맞춘 처리**: Trino 메모리 한계에 맞춰 전체 이력 중복 제거를 변경 키 중심의 증분 MERGE로 전환. 다시 읽고 계산할 범위 축소.
+- **검증 후 제공**: dbt/Trino에서 키·행 수·최신성을 검증한 결과만 D1/Workers로 게시. 이력 분석과 사용자 조회 경로를 분리해 불필요한 전체 이력 조회 방지.
 
-## Core Stack
+## 핵심 기술
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logoColor=white)
@@ -32,18 +32,18 @@ I started in enterprise BI and moved upstream to make data systems replayable, t
 ![MicroStrategy](https://img.shields.io/badge/MicroStrategy-EC1C24?style=flat-square&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
-## GitHub Activity
+## GitHub 활동
 
 <p align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=masondev1024&show_icons=true&theme=transparent&hide_rank=true&include_all_commits=true&disable_animations=true&locale=en" alt="GitHub Stats" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=masondev1024&show_icons=true&theme=transparent&hide_rank=true&include_all_commits=true&disable_animations=true&locale=en" alt="GitHub 활동 통계" />
 </p>
 
 <p align="center">
   <a href="https://github.com/masondev1024">
-    <img height="165" src="./assets/github-streak.svg" alt="GitHub contribution streak for masondev1024" />
+    <img height="165" src="./assets/github-streak.svg" alt="masondev1024의 GitHub 연속 기여 기록" />
   </a>
 </p>
 
-## Contact
+## 연락처
 
-[Velog](https://velog.io/@mason_dev) · [Email](mailto:masondev1024@gmail.com)
+[블로그](https://velog.io/@mason_dev) · [이메일](mailto:masondev1024@gmail.com)
